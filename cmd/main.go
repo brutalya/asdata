@@ -14,4 +14,11 @@ func main() {
 	}
 
 	fmt.Println(response)
+
+	res, e := coingecko.GetCoinMarketChart("bitcoin", "usd", "1")
+	if e != nil {
+		log.Fatalf("Error pinging API: %v", err)
+	}
+
+	fmt.Println(res)
 }
